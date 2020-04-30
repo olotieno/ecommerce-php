@@ -1,0 +1,14 @@
+
+#Fix Rewrite
+Options -Multiviews
+ 
+# Mod Rewrite
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /final/cart/login/
+ 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+ 
+# used for php pages such as "PaulComputers.com/login.php" will become "PaulComputers.com/login/"
+RewriteRule ^([a-z_]+)\/?$ $1.php [NC]
